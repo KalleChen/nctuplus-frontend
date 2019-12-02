@@ -23,6 +23,7 @@ import * as Scores from 'pages/Scores'
 import PageNotFound from 'pages/PageNotFound'
 import Login from 'pages/Login'
 import { validateToken } from 'api/Controllers/user'
+import Calendar from './components/Calendar/index.js'
 
 const mapStateToProps = state => ({ currentUser: state.user.currentUser })
 const mapDispatchToProps = dispatch => ({ validateToken: () => dispatch(validateToken()) })
@@ -55,6 +56,9 @@ const Router = enhance(({ currentUser }) => {
         {/* index route group */}
         <Route exact path='/' component={Index} />
         <Route exact path='/login' component={Login} />
+
+        {/* calendar */}
+        <Route exact path='/calendar' component={Calendar} />
 
         {/* admin bulletin route group */}
         <Route exact path='/admin/bulletin' component={adminOnly(Admin.Bulletin.Index)} />
