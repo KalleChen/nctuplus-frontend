@@ -23,6 +23,7 @@ import * as Scores from 'pages/Scores'
 import PageNotFound from 'pages/PageNotFound'
 import Login from 'pages/Login'
 import { validateToken } from 'api/Controllers/user'
+import ToDoList from 'components/ToDoList'
 
 const mapStateToProps = state => ({ currentUser: state.user.currentUser })
 const mapDispatchToProps = dispatch => ({ validateToken: () => dispatch(validateToken()) })
@@ -53,7 +54,7 @@ const Router = enhance(({ currentUser }) => {
       <Switch>
 
         {/* index route group */}
-        <Route exact path='/' component={Index} />
+        <Route exact path='/' component={ToDoList} />
         <Route exact path='/login' component={Login} />
 
         {/* admin bulletin route group */}
@@ -137,6 +138,8 @@ const Router = enhance(({ currentUser }) => {
             <Route path='/user/GPA' component={User.GPA} />
           </User.Index>
         )} />
+
+        {/* <Route path='/todolist' component={Todolist}/> */}
 
         {/* 404 not found */}
         <Route component={PageNotFound} />
