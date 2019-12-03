@@ -8,7 +8,8 @@ class ToDoList extends React.Component {
         super(props);
         this.state={
             date:[4,12],
-            todolist:[{color:'blue',name:'計算機系統管理  作業'},
+            todolist:[
+            {color:'blue',name:'計算機系統管理  作業'},
             {color:'blue',name:'計算機圖學  作業'},
             {color:'red',name:'日文 （三） 小考'}]
         }
@@ -27,7 +28,8 @@ class ToDoList extends React.Component {
     }
 
     addlist(){
-        var test=[{color:'blue',name:'計算機系統管理  作業'},
+        var test=
+        [{color:'blue',name:'計算機系統管理  作業'},
         {color:'blue',name:'計算機圖學  作業'},
         {color:'red',name:'日文 （三） 小考'}];
         this.setState({todolist:test})

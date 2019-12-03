@@ -1,0 +1,52 @@
+.Container{
+    width: 30vw;
+    height: 320px;
+    background:lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    .Content{
+        width: 100%;
+        height: 88%;
+        background:red;
+        position: relative;
+        .Title{
+            width: 100%;
+            height: 10%;
+            background: white;
+            display: flex;
+            flex-direction: row;
+            .TitleDate{
+                width:50%;
+                height: 100%;
+                border: 1px solid;
+                text-align: center;
+                &:nth-child(1){
+                    border-left: 0;
+                    border-right: 0;
+                }
+                &:nth-child(2){
+                    border-right:0;
+                    cursor: pointer;
+                }
+            }
+        }
+        .Textarea{ 
+            width: 100%;
+            height:90%;
+            outline: none;
+            font-size: 15px;
+            padding:4%;
+            position:absolute;
+        }
+        .calendar{
+            width:50%;
+            height:40%;
+            position: absolute;
+            left:50%;
+            border:1px solid;
+
+        }
+        
+    }
+}
