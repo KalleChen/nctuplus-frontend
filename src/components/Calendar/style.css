@@ -38,7 +38,6 @@ body {
   text-align: center;
   background-color: white;
   color: black;
-  border: 1px solid red;
 }
 
 .weekdays {
@@ -52,7 +51,7 @@ body {
 .days {
   font-weight: 300;
   padding: 10px 0;
-  display: flex;
+  display: flex;  
   flex-wrap: wrap;
 }
 
@@ -64,8 +63,8 @@ body {
 }
 
 .days div {
-  padding: 20px 0;
-  margin-bottom: 20px;
+  padding: 30px 0;
+  
   transition: all 0.4s;
 }
 
@@ -92,8 +91,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   font-size: 23px;
   background-color: rgba(0, 0, 0, 0.1);
@@ -112,14 +111,19 @@ body {
 }
 
 .colorbar{
-  border: 1px solid red;
-
+  width: 60px;
+  height: 5px;
+  border-radius: 20px;
+  align-content: center;
+  
 }
 
-.printCB{
-  border: 1px solid blue;
-  color: black;
-  padding: 10px;
-  text-align: center;
-  width: 100%;
+.colorBarTypes{
+  justify-content: space-around;
+  display: flex;
+  border: 1px solid red;
+  
+}
+span{
+  margin-top: 7px;
 }
