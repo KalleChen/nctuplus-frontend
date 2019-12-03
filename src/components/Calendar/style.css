@@ -24,7 +24,7 @@ body {
 
 .calendar {
   margin: auto;
-  width: 600px;
+  width: 800px;
   background-color: #fff;
   box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.2);
 }
@@ -34,17 +34,19 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 40px 30px;
+  padding: 20px 15px;
   text-align: center;
-  background-color: #2ecc71;
-  color: #fff;
+  background-color: white;
+  color: black;
+  border: 1px solid red;
 }
 
 .weekdays {
-  background-color: #27ae60;
-  color: #fff;
+  background-color: white;
+  color: black;
   padding: 7px 0;
   display: flex;
+  margin-bottom: 10px;
 }
 
 .days {
@@ -56,13 +58,14 @@ body {
 
 .weekdays div,
 .days div {
+  padding: 10px;
   text-align: center;
   width: 14.28%;
 }
 
 .days div {
-  padding: 10px 0;
-  margin-bottom: 10px;
+  padding: 20px 0;
+  margin-bottom: 20px;
   transition: all 0.4s;
 }
 
@@ -70,8 +73,12 @@ body {
   color: #999;
 }
 
+.next_date {
+  color: #999;
+}
+
 .today {
-  background-color: #27ae60;
+  background-color: #5dbb83;
   color: #fff;
 }
 
@@ -85,8 +92,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   font-size: 23px;
   background-color: rgba(0, 0, 0, 0.1);
@@ -102,4 +109,17 @@ body {
 #month {
   font-size: 30px;
   font-weight: 500;
+}
+
+.colorbar{
+  border: 1px solid red;
+
+}
+
+.printCB{
+  border: 1px solid blue;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
 }

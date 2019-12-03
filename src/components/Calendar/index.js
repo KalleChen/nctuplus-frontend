@@ -1,4 +1,6 @@
 import React from 'react'
+import Day from './Day'
+import ColorBar from './ColorBar'
 import './style.css'
 class Calendar extends React.Component {
   constructor (props) {
@@ -8,6 +10,29 @@ class Calendar extends React.Component {
     }
     this.renderDate = this.renderDate.bind(this)
     this.moveDate = this.moveDate.bind(this)
+    this.colorbarData = [
+      { id: 1, name: '考試', colortype: 'purple' },
+      { id: 2, name: '作業', colortype: 'blue' },
+      { id: 3, name: '放假', colortype: 'orange' },
+      { id: 4, name: '活動', colortype: 'green' }
+    ]
+  }
+
+  printColorBarTypes (props) {
+    const item = this.props.colorbarData.map((colorbarData) =>
+      <div key={colorbarData.id}>
+        <div>{colorbarData.name}</div>
+        <ColorBar props={colorbarData} />
+      </div>
+    )
+    // var lst = ''
+    // lst += '<div>' + "haha " + {item} + '<div>'
+    // document.getElementsByClassName('printCB')[0].innerHTML = item
+    return (
+      <div>
+        {item}
+      </div>
+    )
   }
 
   render () {
@@ -36,6 +61,8 @@ class Calendar extends React.Component {
             <div>Sat</div>
           </div>
           <div className='days' />
+          {this.printColorBarTypes}
+          <printColorBarTypes colorbarData={this.colorbarData} />
         </div>
       </div>
     )
@@ -57,29 +84,36 @@ class Calendar extends React.Component {
       0
     ).getDate()
     var months = [
-      'January',
-      'February',
-      'March',
-      'April',
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
       'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December'
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec'
     ]
     document.getElementById('month').innerHTML = months[this.state.dt.getMonth()]
     document.getElementById('date_str').innerHTML = this.state.dt.toDateString()
     var cells = ''
+
+    var count = 0
     for (let x = day; x > 0; x--) {
+      count++
       cells += "<div class='prev_date'>" + (prevDate - x + 1) + '</div>'
     }
     console.log(day)
     for (let i = 1; i <= endDate; i++) {
+      count++
       if (i === today.getDate() && this.state.dt.getMonth() === today.getMonth()) cells += "<div class='today'>" + i + '</div>'
       else { cells += '<div>' + i + '</div>' }
+    }
+    for (let i = 1; i <= 35 - count; i++) {
+      cells += "<div class='next_date'>" + i + '</div>'
     }
     document.getElementsByClassName('days')[0].innerHTML = cells
   }
