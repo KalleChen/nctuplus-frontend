@@ -2,6 +2,7 @@ import React from 'react'
 import Day from './Day'
 import ColorBar from './ColorBar'
 import ColorBarTypes from './ColorBarTypes'
+import ReactDOM from 'react-dom';
 import './style.css'
 class Calendar extends React.Component {
   constructor (props) {
@@ -108,19 +109,23 @@ class Calendar extends React.Component {
     var count = 0;
     for (let x = day; x > 0; x--) {
       count++;
-      cells += "<div class='prev_date'>" + (prevDate - x + 1) + '<ColorBar colortype=\"blue\" />' + '</div>'
+      cells += "<div class='prev_date'>" + (prevDate - x + 1) + "</div>"
       //cells += "<Day date = {" + (prevDate - x + 1) + "} />";
     }
     console.log(day)
     for (let i = 1; i <= endDate; i++) {
       count++;
-      if (i === today.getDate() && this.state.dt.getMonth() === today.getMonth()) cells += "<div class='today'>" + i + '</div>'
-      else { cells += '<div>' + i + '</div>' }
+      if (i === today.getDate() && this.state.dt.getMonth() === today.getMonth()) cells += "<div class='today'>" + i +'<div id="today"></div>' + '</div>'
+      else { cells += '<div>' + i  + '</div>' }
     }
     for(let i = 1; i <= 35-count; i++) {
       cells += "<div class='next_date'>" + i + '</div>'
     }
-    document.getElementsByClassName('days')[0].innerHTML = cells
+    document.getElementsByClassName('days')[0].innerHTML = cells;
+    ReactDOM.render(
+      <ColorBar colortype="purple" />
+      , document.getElementById('today')
+    );
   }
 
   moveDate (para) {

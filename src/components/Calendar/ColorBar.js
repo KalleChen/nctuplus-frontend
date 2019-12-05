@@ -10,6 +10,8 @@ class ColorBar extends React.Component{
     render () {
         const style = {
             backgroundColor: this.props.colortype,
+            width: '60px',
+            padding: '0',
          };
         return (
           <div className = "colorbar" style = {style}>
